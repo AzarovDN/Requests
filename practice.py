@@ -33,7 +33,7 @@ def translate_it(file_read, file_write, lang, translate_lang = 'ru'):
         response = requests.get(url, params=params).json()
         translate_text = ' '.join(response.get('text', []))
 
-    with open(file_write, 'w') as text:
+    with open(file_write, 'w', encoding='utf8') as text:
         text.write(translate_text)
 
 
